@@ -140,36 +140,39 @@ const Skills_Interests = (
     icon: string;
     iconColor: string;
   },
-) => (
-  <div grid gap-7 h-fit>
-    {/*heading */}
-    <div font-bold text-2xl vertCentered>
-      <Icon
-        icon={props.icon.toLowerCase()}
-        width="25"
-        class={`rounded-full dark:bg-black-3 p-[0.3rem] ${props.iconColor}`}
-      >
-      </Icon>
-      {props.header}
-    </div>
+) => {
+  console.log(store);
+  return (
+    <div grid gap-7 h-fit>
+      {/*heading */}
+      <div font-bold text-2xl vertCentered>
+        <Icon
+          icon={props.icon}
+          width="25"
+          class={`rounded-full dark:bg-black-3 p-[0.3rem] ${props.iconColor}`}
+        >
+        </Icon>
+        {props.header}
+      </div>
 
-    <div flex flex-wrap gap-3>
-      {store[props.store_name].map((x) => {
-        const txttoArr = x.split(" ");
-        const txt = txttoArr.slice(0, -1).join(" ");
-        return (
-          <span
-            class="capitalize vertCentered p-1 px-2 rounded-lg"
-            bg="slate-1 dark:black-3"
-          >
-            <Icon icon={txttoArr[txttoArr.length - 1].toLowerCase()}></Icon>
-            {txt}
-          </span>
-        );
-      })}
+      <div flex flex-wrap gap-3>
+        {store[props.store_name].map((x) => {
+          const txttoArr = x.split(" ");
+          const txt = txttoArr.slice(0, -1).join(" ");
+          return (
+            <span
+              class="capitalize vertCentered p-1 px-2 rounded-lg"
+              bg="slate-1 dark:black-3"
+            >
+              <Icon icon={txttoArr[txttoArr.length - 1].toLowerCase()}></Icon>
+              {txt}
+            </span>
+          );
+        })}
+      </div>
     </div>
-  </div>
-);
+  )
+};
 
 const OSS = () => (
   <div grid gap-7>

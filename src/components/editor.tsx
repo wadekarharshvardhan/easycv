@@ -114,50 +114,71 @@ const Education_WorkExp = (props: any) => {
 const Skills_Hobbies = (props: any) => {
   const { store_name } = props;
 
+  const determineIcon = (text: string) => {
+    const iconMap: { [key: string]: string } = {
+      html: "skill-icons:html",
+      css: "skill-icons:css",
+      javascript: "skill-icons:javascript",
+      reading: "mdi:book",
+      gaming: "mdi:gamepad",
+    };
+    return iconMap[text.toLowerCase()] || "mdi:help-circle-outline"; 
+  };
+
   return (
     <div>
       <h3 capitalize>{store_name}</h3>
 
       <div grid md:flex flex-wrap gap-3>
         <For each={store[store_name]}>
-          {(val, index) => (
-            <div
-              bg="slate-1 dark:black-3"
-              grid
-              grid-cols="[1fr_auto]"
-              items-center
-              focus-within="border-2 border-solid border-blue"
-              rounded-lg
-            >
-              <input
-                rounded-r-none
-                w-full
-                focus:outline-none
-                placeholder={store_name == "skills"
-                  ? "skill"
-                  : "interest / hobby"}
-                value={val}
-                size={val.length}
-                onchange={(e) =>
-                  setStore(store_name, index(), e.target.value)}
-              />
-
-              <button
-                aria-label="delete input"
-                class="shadow-none !bg-slate-1 dark:!bg-black-3 p-2 text-3xl rounded-l-none"
-                onclick={() =>
-                  setStore(
-                    store_name,
-                    store[store_name].filter((_, i) => i !== index()),
-                  )}
+          {(val, index) => {
+            const [text] = val.split(" ");
+            const icon = determineIcon(text);
+            return (
+              <div
+                bg="slate-1 dark:black-3"
+                grid
+                grid-cols="[1fr_auto]"
+                items-center
+                focus-within="border-2 border-solid border-blue"
+                rounded-lg
               >
-                <Icon
-                  icon="ion:close-circle"
-                  class="text-red-4 dark:text-red-4 hover:text-red-2"
+                <input
+                  rounded-r-none
+                  w-full
+                  focus:outline-none
+                  placeholder={store_name == "skills" ? "skill" : "interest / hobby"}
+                  value={text}
+                  size={text.length}
+                  onchange={(e) => {
+                    const updatedValue = `${e.target.value} ${determineIcon(e.target.value)}`;
+                    setStore(store_name, index(), updatedValue);
+                  }}
                 />
-              </button>
-            </div>
-          )}
+
+                <Icon
+                  icon={icon}
+                  class="text-blue-4 dark:text-blue-3"
+                  width="20"
+                />
+
+                <button
+                  aria-label="delete input"
+                  class="shadow-none !bg-slate-1 dark:!bg-black-3 p-2 text-3xl rounded-l-none"
+                  onclick={() =>
+                    setStore(
+                      store_name,
+                      store[store_name].filter((_, i) => i !== index()),
+                    )}
+                >
+                  <Icon
+                    icon="ion:close-circle"
+                    class="text-red-4 dark:text-red-4 hover:text-red-2"
+                  />
+                </button>
+              </div>
+            );
+          }}
         </For>
 
         <button
