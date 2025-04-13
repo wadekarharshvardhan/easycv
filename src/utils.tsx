@@ -9,13 +9,28 @@ export const generatePDF = async () => {
     return;
   }
 
+  const pdf = new jsPDF("p", "mm", "a4");
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = pdf.internal.pageSize.getHeight();
+
   const canvas = await html2canvas(element, { scale: 2 });
   const imgData = canvas.toDataURL("image/png");
 
-  const pdf = new jsPDF("p", "mm", "a4");
-  const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+  let imgHeight = (canvas.height * pdfWidth) / canvas.width;
+  let heightLeft = imgHeight;
+  let position = 0;
 
-  pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  // Add the first page
+  pdf.addImage(imgData, "PNG", 0, position, pdfWidth, imgHeight);
+  heightLeft -= pdfHeight;
+
+  // Add additional pages if content overflows
+  while (heightLeft > 0) {
+    position = heightLeft - imgHeight;
+    pdf.addPage();
+    pdf.addImage(imgData, "PNG", 0, position, pdfWidth, imgHeight);
+    heightLeft -= pdfHeight;
+  }
+
   pdf.save("resume.pdf");
 };
