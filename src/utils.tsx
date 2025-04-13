@@ -1,14 +1,21 @@
-export const generatePDF = () => {
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
+
+export const generatePDF = async () => {
   const element = document.getElementById("resumeResult");
-  const stylesheet = document.styleSheets[0];
 
-  // set @page's size = resume div's dimensions
-  stylesheet.insertRule(
-    `@page { size: ${element?.offsetWidth}px ${
-      element?.offsetHeight + 1
-    }px; }`,
-    stylesheet.cssRules.length,
-  );
+  if (!element) {
+    console.error("Element with id 'resumeResult' not found.");
+    return;
+  }
 
-  window.print();
+  const canvas = await html2canvas(element, { scale: 2 });
+  const imgData = canvas.toDataURL("image/png");
+
+  const pdf = new jsPDF("p", "mm", "a4");
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+  pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+  pdf.save("resume.pdf");
 };
