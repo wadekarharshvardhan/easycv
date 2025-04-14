@@ -11,7 +11,7 @@ export default defineConfig({
     host: true,
     headers: {
       'Content-Security-Policy': "script-src 'self'; object-src 'self'",
-      'Content-Type': 'application/javascript',
+      'Content-Type': 'application/javascript; charset=utf-8',
     },
   },
   preview: { port: 8000 },
@@ -25,8 +25,10 @@ export default defineConfig({
     commonjsOptions: {
       include: [/jspdf/, /html2canvas/, '@iconify-icon/solid'],
     },
-    mimeTypes: {
-      'application/javascript': ['js'],
+    mimeType: {
+      '.js': 'application/javascript',
+      '.css': 'text/css',
+      '.txt': 'text/plain',
     },
     outDir: 'dist',
     sourcemap: true,
