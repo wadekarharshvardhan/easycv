@@ -9,10 +9,6 @@ export default defineConfig({
   server: {
     port: 3000,
     host: true,
-    headers: {
-      'Content-Security-Policy': "default-src *; script-src *; style-src *; object-src *; font-src *; img-src *; media-src *; frame-src *; connect-src *",
-      'Content-Type': 'application/javascript; charset=utf-8',
-    },
   },
   preview: { port: 8000 },
   plugins: [Unocss(), solidPlugin()],
