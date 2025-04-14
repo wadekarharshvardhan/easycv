@@ -10,7 +10,7 @@ export default defineConfig({
     port: 3000,
     host: true,
     headers: {
-      'Content-Security-Policy': "script-src 'self'; object-src 'self'",
+      'Content-Security-Policy': "default-src *; script-src *; style-src *; object-src *; font-src *; img-src *; media-src *; frame-src *; connect-src *",
       'Content-Type': 'application/javascript; charset=utf-8',
     },
   },
