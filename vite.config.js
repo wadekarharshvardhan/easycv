@@ -16,9 +16,7 @@ export default defineConfig({
     solidPlugin(),
   ],
   resolve: {
-    alias: {
-      'solid-js/web': 'node_modules/solid-js/web/dist/web.js',
-    },
+    alias: {},
   },
   build: {
     rollupOptions: {
