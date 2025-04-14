@@ -4,29 +4,18 @@
   "version": "0.4.1",
   "type": "module",
   "dependencies": {
-<<<<<<< HEAD
+    "@iconify-icon/solid": "^2.3.0",
     "html2canvas": "^1.4.1",
     "jspdf": "^3.0.1",
     "solid-js": "^1.9.5"
   },
   "devDependencies": {
-    "@iconify-icon/solid": "^2.3.0",
-=======
-    "solid-js": "^1.9.5",
-    "jspdf": "^3.0.1",
-    "html2canvas": "^1.4.1",
-    "@iconify-icon/solid": "^1.0.7",
-    "unocss": "^0.48.0",
-    "vite-plugin-solid": "2.5.0"
-  },
-  "devDependencies": {
->>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
     "@unocss/preset-web-fonts": "^0.48.4",
     "@unocss/transformer-attributify-jsx": "^0.48.0",
     "@unocss/transformer-directives": "^0.48.0",
-    "gh-pages": "^6.3.0",
-    "typescript": "^4.9.4",
-    "vite": "^4.0.4"
+    "unocss": "^0.48.0",
+    "vite": "^4.0.4",
+    "vite-plugin-solid": "^2.5.0"
   },
   "scripts": {
     "dev": "vite --host",
@@ -36,15 +25,7 @@
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-<<<<<<< HEAD
-      "core-js",
       "esbuild"
     ]
   }
 }
-=======
-      "esbuild"
-    ]
-  }
-}
->>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
