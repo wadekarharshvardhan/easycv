@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+<<<<<<< HEAD
+=======
+      '@iconify-icon/solid':
+        specifier: ^1.0.7
+        version: 1.0.8(solid-js@1.9.5)
+>>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
       html2canvas:
         specifier: ^1.4.1
         version: 1.4.1
@@ -17,10 +23,20 @@ importers:
       solid-js:
         specifier: ^1.9.5
         version: 1.9.5
+<<<<<<< HEAD
     devDependencies:
       '@iconify-icon/solid':
         specifier: ^2.3.0
         version: 2.3.0(solid-js@1.9.5)
+=======
+      unocss:
+        specifier: ^0.48.0
+        version: 0.48.5(rollup@3.29.5)(vite@4.5.13)
+      vite-plugin-solid:
+        specifier: 2.5.0
+        version: 2.5.0(solid-js@1.9.5)(vite@4.5.13)
+    devDependencies:
+>>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
       '@unocss/preset-web-fonts':
         specifier: ^0.48.4
         version: 0.48.5
@@ -36,6 +52,7 @@ importers:
       typescript:
         specifier: ^4.9.4
         version: 4.9.5
+<<<<<<< HEAD
       unocss:
         specifier: ^0.48.0
         version: 0.48.5(rollup@3.29.5)(vite@4.5.13)
@@ -45,6 +62,11 @@ importers:
       vite-plugin-solid:
         specifier: 2.5.0
         version: 2.5.0(solid-js@1.9.5)(vite@4.5.13)
+=======
+      vite:
+        specifier: ^4.0.4
+        version: 4.5.13
+>>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
 
 packages:
 
@@ -330,8 +352,13 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
+<<<<<<< HEAD
   '@iconify-icon/solid@2.3.0':
     resolution: {integrity: sha512-Wz2VZ4SBjP9LHy7VSUWYneCsZhYjY8lmvf7z5ddiqzQsmHYg79AVWjptZSh/nP/2k7JqrJD2prvdU05/P3sjrw==}
+=======
+  '@iconify-icon/solid@1.0.8':
+    resolution: {integrity: sha512-2H4y4f9wOQ0qzAti4dFo84OhU6A9kkmDOqsWX0zAbl2vhQvGylMva6U9/TYwrQUH2N71xje9gqQCb3lfbpfwpw==}
+>>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
     peerDependencies:
       solid-js: '>=1'
 
@@ -692,8 +719,13 @@ packages:
     resolution: {integrity: sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==}
     engines: {node: '>=8.0.0'}
 
+<<<<<<< HEAD
   iconify-icon@2.3.0:
     resolution: {integrity: sha512-C0beI9oTDxQz6voI5CKl7MiJf0Lw4UU8K4G4t6pcUDClLmCvuMOpcvd8MAztQ2SfoH0iv7WHdxBFjekKPFKH2Q==}
+=======
+  iconify-icon@1.0.8:
+    resolution: {integrity: sha512-jvbUKHXf8EnGGArmhlP2IG8VqQLFFyTvTqb9LVL2TKTh7/eCCD1o2HHE9thpbJJb6B8hzhcFb6rOKhvo7reNKA==}
+>>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -1334,9 +1366,15 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
+<<<<<<< HEAD
   '@iconify-icon/solid@2.3.0(solid-js@1.9.5)':
     dependencies:
       iconify-icon: 2.3.0
+=======
+  '@iconify-icon/solid@1.0.8(solid-js@1.9.5)':
+    dependencies:
+      iconify-icon: 1.0.8
+>>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
       solid-js: 1.9.5
 
   '@iconify/types@2.0.0': {}
@@ -1764,7 +1802,11 @@ snapshots:
       css-line-break: 2.1.0
       text-segmentation: 1.0.3
 
+<<<<<<< HEAD
   iconify-icon@2.3.0:
+=======
+  iconify-icon@1.0.8:
+>>>>>>> f35d4f5 (Fix solid-js/web resolution issue)
     dependencies:
       '@iconify/types': 2.0.0
 
