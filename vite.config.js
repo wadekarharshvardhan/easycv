@@ -17,7 +17,7 @@ export default defineConfig({
   ],
   build: {
     rollupOptions: {
-      external: ['jspdf', 'html2canvas'],
+      external: ['solid-js', 'solid-js/web', 'jspdf', 'html2canvas'],
     },
   },
 });
