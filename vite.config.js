@@ -15,12 +15,11 @@ export default defineConfig({
     Unocss(),
     solidPlugin(),
   ],
-  resolve: {
-    alias: {},
-  },
   build: {
+    target: "esnext",
     rollupOptions: {
-      external: ['solid-js', 'solid-js/web', 'jspdf', 'html2canvas'],
+      external: ['jspdf', 'html2canvas'],
     },
   },
+  base: "/", // Remove or set base to "/"
 });
