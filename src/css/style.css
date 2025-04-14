@@ -64,13 +64,13 @@ h3 {
 /* hide window title, website name,time */
 @media print {
   @page {
-    margin: 0;
+    size: A4; /* Force A4 size for printing */
+    margin: 0; /* Remove default margins */
   }
 
   body {
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
-    height: 0;
   }
 
   body * {
@@ -86,9 +86,17 @@ h3 {
     position: absolute;
     left: 0;
     top: 0;
-    box-shadow: none;
-    border-radius: 0;
   }
+}
+
+#resumeResult {
+  width: 210mm; /* A4 width */
+  height: auto; /* Allow dynamic height for all content */
+  overflow: visible; /* Ensure no content is clipped */
+  background: white; /* Ensure a white background for the PDF */
+  position: relative; /* Ensure proper positioning */
+  box-shadow: none; /* Remove any shadow for printing */
+  border-radius: 0; /* Remove border radius for printing */
 }
 
 /* animations */

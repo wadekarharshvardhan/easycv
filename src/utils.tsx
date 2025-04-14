@@ -9,15 +9,20 @@ export const generatePDF = async () => {
     return;
   }
 
+  // Use html2canvas to render the element
+  const canvas = await html2canvas(element, {
+    scale: 2, // Higher scale for better quality
+    useCORS: true, // Handle cross-origin issues
+  });
+
+  const imgData = canvas.toDataURL("image/png");
+
+  // Calculate the dimensions of the PDF
   const pdf = new jsPDF("p", "mm", "a4");
   const pdfWidth = pdf.internal.pageSize.getWidth();
   const pdfHeight = pdf.internal.pageSize.getHeight();
 
-  // Use html2canvas to render the element
-  const canvas = await html2canvas(element, { scale: 2 });
-  const imgData = canvas.toDataURL("image/png");
-
-  // Scale the content to fit the PDF page
+  // Scale the content to fit the A4 page
   const contentWidth = canvas.width;
   const contentHeight = canvas.height;
   const scaleFactor = Math.min(pdfWidth / contentWidth, pdfHeight / contentHeight);
@@ -32,3 +37,4 @@ export const generatePDF = async () => {
   pdf.addImage(imgData, "PNG", xOffset, yOffset, scaledWidth, scaledHeight);
   pdf.save("resume.pdf");
 };
+
