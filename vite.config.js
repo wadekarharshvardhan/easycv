@@ -7,8 +7,7 @@ export default defineConfig({
     include: ['jspdf'],
   },
   server: {
-    strictPort: true,
-    port: 59674,
+    port: 3000,
     host: true,
     headers: {
       'Content-Security-Policy': "script-src 'self'; object-src 'self'",
