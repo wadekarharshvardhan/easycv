@@ -15,6 +15,11 @@ export default defineConfig({
     Unocss(),
     solidPlugin(),
   ],
+  resolve: {
+    alias: {
+      'solid-js/web': 'node_modules/solid-js/web/dist/web.js',
+    },
+  },
   build: {
     rollupOptions: {
       external: ['solid-js', 'solid-js/web', 'jspdf', 'html2canvas'],
