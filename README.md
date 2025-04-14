@@ -7,4 +7,5 @@ EasyCV is a modern and customizable resume builder built with SolidJS, Vite, and
 *Download Options: Export your resume as PNG or PDF.
 *Responsive Design: Works seamlessly across devices.
 *Built with Modern Tools: Powered by SolidJS, Vite, and UnoCSS for fast and efficient performance.
+easy to use
 
