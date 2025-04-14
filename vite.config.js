@@ -16,10 +16,8 @@ export default defineConfig({
     solidPlugin(),
   ],
   build: {
-    target: "esnext",
     rollupOptions: {
       external: ['jspdf', 'html2canvas'],
     },
   },
-  base: "/", // Remove or set base to "/"
 });
