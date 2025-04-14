@@ -14,9 +14,6 @@ importers:
       jspdf:
         specifier: ^3.0.1
         version: 3.0.1
-      solid-js:
-        specifier: ^1.6.7
-        version: 1.9.5
     devDependencies:
       '@iconify-icon/solid':
         specifier: ^1.0.7
