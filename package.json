@@ -4,12 +4,12 @@
   "version": "0.4.1",
   "type": "module",
   "dependencies": {
-    "jspdf": "^3.0.1",
     "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "solid-js": "^1.9.5"
   },
   "devDependencies": {
-    "@iconify-icon/solid": "^1.0.7",
+    "@iconify-icon/solid": "^2.3.0",
     "@unocss/preset-web-fonts": "^0.48.4",
     "@unocss/transformer-attributify-jsx": "^0.48.0",
     "@unocss/transformer-directives": "^0.48.0",
@@ -26,6 +26,9 @@
     "deploy": "gh-pages -d dist"
   },
   "pnpm": {
-  "onlyBuiltDependencies": ["esbuild"]
-}
+    "onlyBuiltDependencies": [
+      "core-js",
+      "esbuild"
+    ]
+  }
 }
